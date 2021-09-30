@@ -41,7 +41,7 @@ export default class Card {
             <span class="card__price">${this.price+'$'}</span>
         </div>
         <h3 class="card__name">
-            ${this.title.slice(0, 40) + '...'}
+            ${this.title}
         </h3>
         <p class="card__description">
             ${this.category} ${this.brand}
@@ -83,6 +83,7 @@ export default class Card {
   render() {
     let cardWrapper = document.createElement("div");
     cardWrapper.setAttribute("id", this.id);
+    cardWrapper.setAttribute("data-element", "body");
     cardWrapper.innerHTML = this.cardBuild();
     this.element = cardWrapper;
   }
