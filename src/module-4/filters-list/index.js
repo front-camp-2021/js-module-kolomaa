@@ -51,7 +51,7 @@ export default class FiltersList {
 
   changeEvent = (event) => {
     const eventName = event.target.checked ? "add-filter" : "remove-filter";
-    console.log(eventName);
+   // console.log(eventName);
 
     let myEvent = new CustomEvent(eventName, {
       bubbles: true,
