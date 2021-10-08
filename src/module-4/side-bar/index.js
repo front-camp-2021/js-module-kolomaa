@@ -33,6 +33,16 @@ export default class SideBar {
 
   addEventListeners() {
     const clearFilters = this.element.querySelector(".aside__btn");
+    clearFilters.addEventListener('pointerdown', () => {
+      Object.keys(this.objectOfFilters).forEach((el) => {
+        const element = this.objectOfFilters[el];
+        element.render();
+      });
+
+      this.element.dispatchEvent(new CustomEvent('clear-filters', {
+        bubbles: true
+      }));
+    });
   }
   
   get sideBarTemplate() {
